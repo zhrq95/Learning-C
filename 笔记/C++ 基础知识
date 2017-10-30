@@ -1,0 +1,32 @@
+演示程序：
+#include <iostream>
+using namespace std;
+int main()
+{
+  int x;
+  cout << "输出一个整数：" ;
+  cin >> x;
+  x = x+1 ;
+  cout << "x+1 = " << x << endl ;
+return 0;
+}
+
+stdio.h 是 C 语言的输入输出支持头文件，
+iostream.h 是 C++ 的输入输出支持头文件。
+一般都有如下内容：
+#include <iostream>
+using namespace std;
+
+printf 是 C 语言中的输出语句，
+cout流 是 C 语言中的输出语句。
+
+cin 是一个代表标准输入设备的对象，是 C++ 中预定义的对象。
+>> 是输入的操作符，表示将从操作符左边接收的输入放到右边的对象中。
+cin >> x 表示从键盘接收输入的内容赋给 x 。
+
+endl 表示 “回车换行”。
+
+return 0; 是一条跳出程序的代码，他表示程序跳出并返回到操作系统，同时带有一个数字 0 作为返回值。
+
+单行注释： //
+块注释： /* ... */
