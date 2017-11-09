@@ -70,4 +70,32 @@ default:
 break;
 }
 
+switch 语句原理是跳转到 caseX 位置执行剩下所有的语句（包括其他 case 里面的），直到最后或者遇见 break 为止。
+因此在每一条语句最后 +break 即可。
+因此某个 case 不加 break 的话将会执行跳转到的 caseX 本身以及以下所有的语句,直到遇到一个 break，或整个 switch 结束。
+
 switch 查找速度比 if else 快，因为 switch 的每个 case 是常量，所以编译器会对 case 排序，然后折半查找，if else 是一一查找。
+
+
+特殊表达式：
+
+i++：先使用 i 的值计算，最后在将 i 加上 1；
+++i：先将 i 的值加上 1，然后再放到表达式里面计算。
+例1：
+int a = 3;
+int b = 4;
+int c = a++ +b;
+printf("c=%d，a=%d",c,a); //结果输出为 c=7，a=4
+例2：
+int a = 3;
+int b = 4;
+int c = ++a +b;
+printf("c=%d，a=%d",c,a); //结果输出为 c=8，a=4
+
+a+=b;a-=b;a*=b;a/=b;
+等同于 a = a 运算符(+-*/) b
+
+条件赋值表达式：
+a = (逻辑表达式)? value1:value2;
+逻辑表达式为真则 a=value1；逻辑表达式为假则 a=value2。
+if else 会导致 CPU cache 指令跳转，而条件赋值表达式不会，因此其速度更快。
